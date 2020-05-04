@@ -1,6 +1,8 @@
 # webp_projecct
 Webpack
 
+please use index.html generated in dist folder
+
 to do
 -----
 1)add code in git ignore where it has to ignore node modules , package-lock.json and dist folder.
