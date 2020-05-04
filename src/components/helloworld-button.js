@@ -1,7 +1,7 @@
 import './helloworld-button.scss'
 
 export class helloWorldButton{
-    buttoncssClass = 'hello-world-text';
+    //buttoncssClass = 'hello-world-text';
     render(){
         const button = document.createElement('button');
         button.innerHTML = 'Hello World';
