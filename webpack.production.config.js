@@ -12,7 +12,7 @@ module.exports={
     entry:'./src/index-view.js',
     output:{
         filename: 'bundle.[contenthash].js',
-        path: path.resolve(__dirname,'./dist'),
+        path: path.resolve(__dirname,'dist'),
         publicPath: ''
     },
     module:{
@@ -62,7 +62,7 @@ module.exports={
         }),
         new HtmlWebpackPlugin({
             title:'hello world',
-            filename:"kiran.html"
+            filename:"index.html"
         })
     ]
 }
