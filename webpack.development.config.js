@@ -49,7 +49,7 @@ module.exports={
             
         ]
     },
-    mode:'none',
+    mode:'development',
     plugins: [
         new TerserPlugin(),
         new MiniCssExtractPlugin({
@@ -62,6 +62,7 @@ module.exports={
             ]
         }),
         new HtmlWebpackPlugin({
+            title:'hello world',
             filename:"kiran.html"
         })
     ]
