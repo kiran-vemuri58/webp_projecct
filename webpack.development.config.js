@@ -9,9 +9,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports={
-    entry:'./src/index-view.js',
+    entry:{
+        'index-view':'./src/index-view.js',
+        'index-view1': './src/index-view1.js'
+    },
     output:{
-        filename: 'bundle.[hash].js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname,'dist'),
         publicPath: ''
     },
@@ -53,7 +56,7 @@ module.exports={
     plugins: [
         new TerserPlugin(),
         new MiniCssExtractPlugin({
-            filename:'bundle.[hash].css'
+            filename:'[nane].[hash].css'
         }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns : [
@@ -63,12 +66,25 @@ module.exports={
         }),
         new HtmlWebpackPlugin({
             title:'hello world',
-            filename:"index.html"
+            filename:"index.html",
+            chunks: ['index-view','vendors~index-view~index-view1']
+        }),
+        new HtmlWebpackPlugin({
+            title:'hello world 2',
+            filename:"index2.html",
+            chunks: ['index-view1','vendors~index-view~index-view1']
         })
     ],
     devServer:{
         contentBase:  path.resolve(__dirname,'dist'),
         index: 'index.html',
         port:9000
+    },
+    optimization:{
+        splitChunks:{
+            chunks: "all",
+            minSize: 10000,
+            automaticNameDelimiter:'_'
+        }
     }
 }
