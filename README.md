@@ -1,9 +1,6 @@
 # webp_projecct
 Webpack
 
-please use index.html generated in dist folder
+Just clone the project and run npm install, npm run build and npm start.
 
-to do
------
-1)add code in git ignore where it has to ignore node modules , package-lock.json and dist folder.
-2)please check line number 4 in components/helloworld-button.js where it is throwing error while doing npm run build.
+bundle files will create in dist folder and application will run in localhost:3000/index and localhost:3000/index2
